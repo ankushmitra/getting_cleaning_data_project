@@ -18,14 +18,14 @@ is given below:
 
 - body: measurement associated with subject's body motion
 - gravity: measurement associated with gravity
-- acc : acceleration measured by the accelerometer 
-- gyro: angular acceleration measured by the gyroscope
+- acc : phone acceleratometer measurment
+- gyro: phone gyroscope measurement
 - mean : average
 - std: standard deviation
 - x : x-component
 - y : y-component
 - z : z-component
-- jerk: [units?]
+- jerk: linear accleration/ angular 
 - mag :
 - freq: the frequency [hz]
 - 

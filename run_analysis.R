@@ -103,8 +103,10 @@ get_features_labels <- function()
         features <- features_df[,2]
                                 
         # tidy up feature names to more easy human readable labels
-        # Remove the 't'and 'f' at the start of each label
-        features <- sub("^[tf]","",features)
+        # Remove the 't'at the start of each label
+        features <- sub("^t","",features)
+        # Convert 'f' at start of each label to 'freq'
+        features <- sub("^f","freq-",features)
         # Remove '()'
         features <- sub("\\(\\)","",features)
         # Remove double occurances of 'Body' with a single
@@ -115,9 +117,7 @@ get_features_labels <- function()
         features <- sub("(Acc|Gyro)Jerk","\\1-Jerk",features)
         # Add '-' between (Acc|Gyro|Jerk)Mag
         features <- sub("(Acc|Gyro|Jerk)Mag","\\1-Mag",features)
-        # Convert meanFreq to mean-Freq
-        features <- sub("meanFreq","mean-Freq",features)
-        
+
         # Put all labels to lowercase
         features <- tolower(features)
                         
